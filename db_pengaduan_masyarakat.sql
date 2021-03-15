@@ -83,10 +83,10 @@ INSERT INTO `petugas` (`id_petugas`, `nama_petugas`, `username`, `password`, `te
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tannggapan`
+-- Table structure for table `tanggapan`
 --
 
-CREATE TABLE `tannggapan` (
+CREATE TABLE `tanggapan` (
   `id_tanggapan` int(11) NOT NULL,
   `id_pengaduan` int(11) NOT NULL,
   `tgl_tanggapan` date NOT NULL,
@@ -118,9 +118,9 @@ ALTER TABLE `petugas`
   ADD PRIMARY KEY (`id_petugas`);
 
 --
--- Indexes for table `tannggapan`
+-- Indexes for table `tanggapan`
 --
-ALTER TABLE `tannggapan`
+ALTER TABLE `tanggapan`
   ADD PRIMARY KEY (`id_tanggapan`),
   ADD KEY `id_pengaduan` (`id_pengaduan`),
   ADD KEY `id_petugas` (`id_petugas`);
@@ -142,9 +142,9 @@ ALTER TABLE `petugas`
   MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tannggapan`
+-- AUTO_INCREMENT for table `tanggapan`
 --
-ALTER TABLE `tannggapan`
+ALTER TABLE `tanggapan`
   MODIFY `id_tanggapan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -158,9 +158,9 @@ ALTER TABLE `pengaduan`
   ADD CONSTRAINT `pengaduan_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `masyarakat` (`nik`);
 
 --
--- Constraints for table `tannggapan`
+-- Constraints for table `tanggapan`
 --
-ALTER TABLE `tannggapan`
+ALTER TABLE `tanggapan`
   ADD CONSTRAINT `tannggapan_ibfk_1` FOREIGN KEY (`id_pengaduan`) REFERENCES `pengaduan` (`id_pengaduan`),
   ADD CONSTRAINT `tannggapan_ibfk_2` FOREIGN KEY (`id_petugas`) REFERENCES `petugas` (`id_petugas`);
 COMMIT;
