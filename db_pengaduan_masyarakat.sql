@@ -161,7 +161,7 @@ ALTER TABLE `pengaduan`
 -- Constraints for table `tanggapan`
 --
 ALTER TABLE `tanggapan`
-  ADD CONSTRAINT `tannggapan_ibfk_1` FOREIGN KEY (`id_pengaduan`) REFERENCES `pengaduan` (`id_pengaduan`),
+  ADD CONSTRAINT `tanggapan_ibfk_1` FOREIGN KEY (`id_pengaduan`) REFERENCES `pengaduan` (`id_pengaduan`),
   ADD CONSTRAINT `tannggapan_ibfk_2` FOREIGN KEY (`id_petugas`) REFERENCES `petugas` (`id_petugas`);
 COMMIT;
 
